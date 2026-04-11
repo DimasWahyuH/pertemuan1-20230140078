@@ -3,8 +3,8 @@
 namespace Database\Seeders;
 
 use App\Models\User;
-use App\Models\Product;  // <--- Nih, udah gua tambahin biar dia kenal
-use App\Models\Category; // <--- Ini juga ditambahin!
+use App\Models\Product;  
+use App\Models\Category;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -20,7 +20,7 @@ class DatabaseSeeder extends Seeder
         User::factory()->create([
             'name' => 'Ayo Belajar',
             'email' => 'belajar@example.com',
-            'password' => bcrypt('password') // Koma nyempilnya udah gua buang
+            'password' => bcrypt('password') 
         ]);
 
         Product::factory(20)->create();

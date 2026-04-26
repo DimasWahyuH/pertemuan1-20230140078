@@ -2,7 +2,6 @@
 
 namespace Database\Factories;
 
-use App\Models\Product;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class CategoryFactory extends Factory
@@ -10,10 +9,10 @@ class CategoryFactory extends Factory
     public function definition(): array
     {
         return [
-            'name' => $this->faker->randomElement([
-                'Elektronik','Fashion','Makanan & Minuman','Kesehatan','Otomotif','Perabotan','Olahraga'
+            'name' => $this->faker->unique()->randomElement([
+                'Elektronik', 'Fashion', 'Makanan & Minuman', 'Kesehatan', 'Otomotif', 
+                'Perabotan', 'Olahraga', 'Pendidikan', 'Mainan', 'Komputer', 'Smartphone'
             ]),
-            'product_id' => Product::all()->random()->id,
         ];
     }
 }

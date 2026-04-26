@@ -13,12 +13,11 @@ class Category extends Model
     protected $table = 'category';
 
     protected $fillable = [
-        'name',
-        'product_id'
+        'name'
     ];
 
-    public function product()
+    public function products()
     {
-        return $this->belongsTo(Product::class, 'product_id'); // Typo product huruf kecil udah gua benerin
+        return $this->hasMany(Product::class, 'category_id');
     }
 }

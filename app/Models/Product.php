@@ -16,7 +16,8 @@ class Product extends Model
         'name',
         'quantity',
         'price',
-        'user_id'
+        'user_id',
+        'category_id'
     ];
 
     public function user()
@@ -26,6 +27,6 @@ class Product extends Model
 
     public function category()
     {
-        return $this->hasMany(Category::class, 'product_id');
+        return $this->belongsTo(Category::class, 'category_id');
     }
 }
